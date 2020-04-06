@@ -1,0 +1,16 @@
+name: Lint Spec
+on: [push]
+
+jobs:
+  lint-spec:
+    name: Lint spec file
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Lint spec file
+      uses: avto-dev/markdown-lint@v1
+      with:
+        args: './oc2ls.md'
+
